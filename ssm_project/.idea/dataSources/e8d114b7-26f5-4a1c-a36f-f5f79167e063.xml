@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="ssm">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.7">
+    <root id="1"/>
+    <schema id="2" parent="1" name="TEST11">
+      <ObjectId>63</ObjectId>
+      <IntrospectionTimestamp>2019-02-20.01:02:20</IntrospectionTimestamp>
+      <CreatedTimestamp>2019-02-20.00:22:50</CreatedTimestamp>
+      <ModifiedTimestamp>2019-02-20.00:22:50</ModifiedTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="PUBLIC">
+      <ObjectId>1</ObjectId>
+    </schema>
+    <schema id="4" parent="1" name="SYS">
+      <ObjectId>0</ObjectId>
+    </schema>
+    <schema id="5" parent="1" name="SYSTEM">
+      <ObjectId>5</ObjectId>
+    </schema>
+    <schema id="6" parent="1" name="OUTLN">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="7" parent="1" name="DIP">
+      <ObjectId>19</ObjectId>
+    </schema>
+    <schema id="8" parent="1" name="TSMSYS">
+      <ObjectId>21</ObjectId>
+    </schema>
+    <schema id="9" parent="1" name="DBSNMP">
+      <ObjectId>24</ObjectId>
+    </schema>
+    <schema id="10" parent="1" name="WMSYS">
+      <ObjectId>25</ObjectId>
+    </schema>
+    <schema id="11" parent="1" name="EXFSYS">
+      <ObjectId>34</ObjectId>
+    </schema>
+    <schema id="12" parent="1" name="DMSYS">
+      <ObjectId>35</ObjectId>
+    </schema>
+    <schema id="13" parent="1" name="CTXSYS">
+      <ObjectId>36</ObjectId>
+    </schema>
+    <schema id="14" parent="1" name="XDB">
+      <ObjectId>38</ObjectId>
+    </schema>
+    <schema id="15" parent="1" name="ANONYMOUS">
+      <ObjectId>39</ObjectId>
+    </schema>
+    <schema id="16" parent="1" name="ORDSYS">
+      <ObjectId>43</ObjectId>
+    </schema>
+    <schema id="17" parent="1" name="ORDPLUGINS">
+      <ObjectId>44</ObjectId>
+    </schema>
+    <schema id="18" parent="1" name="SI_INFORMTN_SCHEMA">
+      <ObjectId>45</ObjectId>
+    </schema>
+    <schema id="19" parent="1" name="MDSYS">
+      <ObjectId>46</ObjectId>
+    </schema>
+    <schema id="20" parent="1" name="OLAPSYS">
+      <ObjectId>47</ObjectId>
+    </schema>
+    <schema id="21" parent="1" name="MDDATA">
+      <ObjectId>50</ObjectId>
+    </schema>
+    <schema id="22" parent="1" name="SYSMAN">
+      <ObjectId>51</ObjectId>
+    </schema>
+    <schema id="23" parent="1" name="MGMT_VIEW">
+      <ObjectId>53</ObjectId>
+    </schema>
+    <schema id="24" parent="1" name="SCOTT">
+      <ObjectId>54</ObjectId>
+    </schema>
+    <schema id="25" parent="1" name="HR">
+      <ObjectId>55</ObjectId>
+    </schema>
+    <schema id="26" parent="1" name="OE">
+      <ObjectId>56</ObjectId>
+    </schema>
+    <schema id="27" parent="1" name="IX">
+      <ObjectId>57</ObjectId>
+    </schema>
+    <schema id="28" parent="1" name="SH">
+      <ObjectId>58</ObjectId>
+    </schema>
+    <schema id="29" parent="1" name="PM">
+      <ObjectId>59</ObjectId>
+    </schema>
+    <schema id="30" parent="1" name="BI">
+      <ObjectId>60</ObjectId>
+    </schema>
+    <schema id="31" parent="1" name="ITHEIMA">
+      <ObjectId>61</ObjectId>
+    </schema>
+    <schema id="32" parent="1" name="ITCAST">
+      <ObjectId>62</ObjectId>
+    </schema>
+    <table id="33" parent="2" name="PRODUCT">
+      <ObjectId>52969</ObjectId>
+      <CreatedTimestamp>2019-02-20.00:22:50</CreatedTimestamp>
+      <ModifiedTimestamp>2019-02-20.00:22:50</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <column id="34" parent="33" name="ID">
+      <Position>1</Position>
+      <DataType>VARCHAR2(32)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>SYS_GUID() </DefaultExpression>
+    </column>
+    <column id="35" parent="33" name="PRODUCTNUM">
+      <Position>2</Position>
+      <DataType>VARCHAR2(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="33" name="PRODUCTNAME">
+      <Position>3</Position>
+      <DataType>VARCHAR2(50)|0</DataType>
+    </column>
+    <column id="37" parent="33" name="CITYNAME">
+      <Position>4</Position>
+      <DataType>VARCHAR2(50)|0</DataType>
+    </column>
+    <column id="38" parent="33" name="DEPARTURETIME">
+      <Position>5</Position>
+      <DataType>TIMESTAMP(6)|0</DataType>
+    </column>
+    <column id="39" parent="33" name="PRODUCTPRICE">
+      <Position>6</Position>
+      <DataType>NUMBER(*)|0</DataType>
+    </column>
+    <column id="40" parent="33" name="PRODUCTDESC">
+      <Position>7</Position>
+      <DataType>VARCHAR2(500)|0</DataType>
+    </column>
+    <column id="41" parent="33" name="PRODUCTSTATUS">
+      <Position>8</Position>
+      <DataType>NUMBER(*)|0</DataType>
+    </column>
+    <index id="42" parent="33" name="PRODUCT">
+      <ObjectId>52971</ObjectId>
+      <CreatedTimestamp>2019-02-20.00:22:50</CreatedTimestamp>
+      <ModifiedTimestamp>2019-02-20.00:22:50</ModifiedTimestamp>
+      <TablespaceName>ITHEIMA</TablespaceName>
+      <ColNames>ID
+PRODUCTNUM</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="43" parent="33" name="SYS_C005484">
+      <ObjectId>52970</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-02-20.00:22:50</CreatedTimestamp>
+      <ModifiedTimestamp>2019-02-20.00:22:50</ModifiedTimestamp>
+      <TablespaceName>ITHEIMA</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="44" parent="33" name="SYS_C005484">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2019-02-20.00:22:50</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C005484</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="45" parent="33" name="PRODUCT">
+      <ModifiedTimestamp>2019-02-20.00:22:50</ModifiedTimestamp>
+      <ColNames>ID
+PRODUCTNUM</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PRODUCT</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
