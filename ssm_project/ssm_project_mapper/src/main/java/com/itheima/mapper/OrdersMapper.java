@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface OrdersMapper {
 
-    List<Orders> findAll() throws Exception;
+    List<Orders> findAll(String searchValue) throws Exception;
 }

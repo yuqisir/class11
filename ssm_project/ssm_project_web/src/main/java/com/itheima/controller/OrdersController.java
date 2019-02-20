@@ -1,5 +1,6 @@
 package com.itheima.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.itheima.domain.Orders;
 import com.itheima.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +18,13 @@ public class OrdersController {
     private OrdersService ordersService;
     @RequestMapping("/findAll")
     public String findAll(@RequestParam(name="pageNum",required = false,defaultValue = "1") Integer pageNum,
-                          @RequestParam(name="pageSize",required = false,defaultValue = "3") Integer pageSize, Model model) throws Exception {
-
-        List<Orders> list = ordersService.findAll(pageNum,pageSize);
-        model.addAttribute("ordersList",list);
+                          @RequestParam(name="pageSize",required = false,defaultValue = "3") Integer pageSize,
+                          String searchValue,Model model) throws Exception {
+        System.out.println("搜索："+searchValue);
+        List<Orders> list = ordersService.findAll(pageNum,pageSize,searchValue);
+        PageInfo pageInfo=new PageInfo(list);
+        model.addAttribute("pageInfo",pageInfo);
+        model.addAttribute("sv",searchValue);
         return "orders-list";
     }
 

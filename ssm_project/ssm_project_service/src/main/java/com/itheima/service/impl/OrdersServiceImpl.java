@@ -16,8 +16,8 @@ public class OrdersServiceImpl implements OrdersService{
     private OrdersMapper mapper;
 
     @Override
-    public List<Orders> findAll(Integer pageNum,Integer pageSize) throws Exception {
+    public List<Orders> findAll(Integer pageNum,Integer pageSize,String seachValue) throws Exception {
         PageHelper.startPage(pageNum,pageSize);
-        return mapper.findAll();
+        return mapper.findAll(seachValue);
     }
 }

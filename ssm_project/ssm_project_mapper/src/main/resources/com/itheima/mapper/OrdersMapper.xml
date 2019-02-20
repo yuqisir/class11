@@ -12,8 +12,13 @@
         -->
         <association property="product" javaType="product" column="productId" select="com.itheima.mapper.ProductMapper.findAll" fetchType="lazy"/>
     </resultMap>
-    <select id="findAll" resultMap="ordersMap">
+    <select id="findAll" parameterType="string" resultMap="ordersMap">
         SELECT * FROM ORDERS
+        <where>
+            <if test="value!=null and value.length>0">
+                and ordernum like '%${value}%'
+            </if>
+        </where>
     </select>
 
 </mapper>
