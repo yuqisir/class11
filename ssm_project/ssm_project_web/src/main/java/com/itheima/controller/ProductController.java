@@ -21,4 +21,11 @@ public class ProductController {
         model.addAttribute("productList",list);
         return "product-list";
     }
+
+    //删除
+    @RequestMapping("/deleteAll")
+    public String deleteAll(String[] ids)throws Exception{
+        productService.deleteAll(ids);
+        return "redirect:/product/findAll";
+    }
 }

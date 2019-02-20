@@ -6,4 +6,15 @@
     <select id="findAll" resultType="product">
         SELECT * FROM PRODUCT
     </select>
+
+    <delete id="deleteAll" parameterType="list">
+        DELETE FROM PRODUCT
+        <where>
+            <if test="array!=null and array.length>0">
+                <foreach collection="array" open="id in(" close=")" separator="," item="id">
+                    #{id}
+                </foreach>
+            </if>
+        </where>
+    </delete>
 </mapper>

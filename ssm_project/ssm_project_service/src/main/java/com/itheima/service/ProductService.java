@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface ProductService {
     List<Product> findAll() throws Exception;
+
+    void deleteAll(String[] ids)throws Exception;
 }

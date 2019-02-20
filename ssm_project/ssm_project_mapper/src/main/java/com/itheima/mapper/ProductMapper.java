@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ProductMapper {
     List<Product> findAll() throws Exception;
+
+    void deleteAll(String[] ids)throws Exception;
 }

@@ -20,4 +20,9 @@ public class ProductServiceImpl implements ProductService{
 
         return productMapper.findAll();
     }
+
+    @Override
+    public void deleteAll(String[] ids) throws Exception {
+        productMapper.deleteAll(ids);
+    }
 }

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" isELIgnored="false" %>
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -198,7 +198,7 @@
 											onclick="location.href='${pageContext.request.contextPath}/pages/product-add.jsp'">
 											<i class="fa fa-file-o"></i> 新建
 										</button>
-										<button type="button" class="btn btn-default" title="删除" id="deletAll">
+										<button type="button" class="btn btn-default" title="删除">
 											<i class="fa fa-trash-o"></i> 删除
 										</button>
 										<button type="button" class="btn btn-default" title="开启">
@@ -215,9 +215,9 @@
 							</div>
 							<div class="box-tools pull-right">
 								<div class="has-feedback">
-									<input type="text" class="form-control input-sm" id="searchId"
+									<input type="text" class="form-control input-sm"
 										placeholder="搜索"> <span
-										class="glyphicon glyphicon-search" id="search"></span>
+										class="glyphicon glyphicon-search form-control-feedback"></span>
 								</div>
 							</div>
 							<!--工具栏/-->
@@ -231,35 +231,31 @@
 											id="selall" type="checkbox" class="icheckbox_square-blue">
 										</th>
 										<th class="sorting_asc">ID</th>
-										<th class="sorting_desc">编号</th>
+										<th class="sorting_desc">订单编号</th>
 										<th class="sorting_asc sorting_asc_disabled">产品名称</th>
-										<th class="sorting_desc sorting_desc_disabled">出发城市</th>
-										<th class="sorting">出发时间</th>
-										<th class="text-center sorting">产品价格</th>
-										<th class="sorting">产品描述</th>
-										<th class="text-center sorting">状态</th>
+										<th class="sorting_desc sorting_desc_disabled">金额</th>
+										<th class="sorting">下单时间</th>
+										<th class="text-center sorting">订单状态</th>
 										<th class="text-center">操作</th>
 									</tr>
 								</thead>
 								<tbody>
 
 
-									<c:forEach items="${productList}" var="product">
+									<c:forEach items="${ordersList}" var="orders">
 
 										<tr>
-											<td><input name="ids" type="checkbox" class="ids" value="${product.id }"></td>
-											<td>${product.id }</td>
-											<td>${product.productNum }</td>
-											<td>${product.productName }</td>
-											<td>${product.cityName }</td>
-											<td>${product.departureTimeStr }</td>
-											<td class="text-center">${product.productPrice }</td>
-											<td>${product.productDesc }</td>
-											<td class="text-center">${product.productStatusStr }</td>
+											<td><input name="ids" type="checkbox"></td>
+											<td>${orders.id }</td>
+											<td>${orders.orderNum }</td>
+											<td>${orders.product.productName }</td>
+											<td>${orders.product.productPrice }</td>
+											<td>${orders.orderTimeStr }</td>
+											<td class="text-center">${orders.orderStatusStr }</td>
 											<td class="text-center">
 												<button type="button" class="btn bg-olive btn-xs">订单</button>
-												<button type="button" class="btn bg-olive btn-xs">详情</button>
-												<button type="button" class="btn bg-olive btn-xs" onclick="updateProduct('${product.id }');">编辑</button>
+												<button type="button" class="btn bg-olive btn-xs" onclick="location.href='${pageContext.request.contextPath}/orders/findById.do?id=${orders.id}'">详情</button>
+												<button type="button" class="btn bg-olive btn-xs">编辑</button>
 											</td>
 										</tr>
 									</c:forEach>
@@ -278,7 +274,6 @@
 							<!--数据列表/-->
 
 
-
 						</div>
 						<!-- 数据表格 /-->
 
@@ -287,35 +282,40 @@
 					<!-- /.box-body -->
 
 					<!-- .box-footer-->
-					<div class="box-footer">
-						<div class="pull-left">
-							<div class="form-group form-inline">
-								总共2 页，共14 条数据。 每页 <select class="form-control">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</select> 条
-							</div>
-						</div>
+                <div class="box-footer">
+                    <div class="pull-left">
+                        <div class="form-group form-inline">
+                            总共2 页，共14 条数据。 每页
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select> 条
+                        </div>
+                    </div>
 
-						<div class="box-tools pull-right">
-							<ul class="pagination">
-								<li><a href="#" aria-label="Previous">首页</a></li>
-								<li><a href="#">上一页</a></li>
-								<li><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-								<li><a href="#">下一页</a></li>
-								<li><a href="#" aria-label="Next">尾页</a></li>
-							</ul>
-						</div>
+                    <div class="box-tools pull-right">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">首页</a>
+                            </li>
+                            <li><a href="#">上一页</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">下一页</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">尾页</a>
+                            </li>
+                        </ul>
+                    </div>
 
-					</div>
-					<!-- /.box-footer-->
+                </div>
+                <!-- /.box-footer-->
 
 
 
@@ -430,6 +430,14 @@
 	<script
 		src="${pageContext.request.contextPath}/plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
 	<script>
+		function changePageSize() {
+			//获取下拉框的值
+			var pageSize = $("#changePageSize").val();
+
+			//向服务器发送请求，改变没页显示条数
+			location.href = "${pageContext.request.contextPath}/orders/findAll.do?page=1&pageSize="
+					+ pageSize;
+		}
 		$(document).ready(function() {
 			// 选择框
 			$(".select2").select2();
@@ -470,35 +478,6 @@
 				$(this).data("clicks", !clicks);
 			});
 		});
-
-		$(function () {
-			$("#deletAll").click(function () {
-				//获取复选框
-				var cks=$(".ids");
-				var ckVal=new Array(0);
-				for(var i=0;i<cks.length;i++){
-				    //判断是否被选择
-                    if(cks[i].checked){
-                        ckVal.push(cks[i].value)
-                    }
-				}
-				if(ckVal.length>0){
-                    window.location.href="${pageContext.request.contextPath}/product/deleteAll?ids="+ckVal;
-				}else{
-				    alert("请选择删除的选项！");
-				}
-
-            });
-            //搜索
-			$("#search").click(function () {
-				alert("ok"+$("#searchId").val());
-            });
-        })
-		function updateProduct(id) {
-			alert(id);
-        }
-
-
 	</script>
 </body>
 
