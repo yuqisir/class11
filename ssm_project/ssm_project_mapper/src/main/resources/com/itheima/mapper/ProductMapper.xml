@@ -3,8 +3,20 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.itheima.mapper.ProductMapper">
-    <select id="findAll" resultType="product">
+
+
+    <!--根据订单表中产品的id到产品表中查询对应的产品信息
+    <select id="findProductById" parameterType="string" resultType="product">
+         SELECT * FROM PRODUCT WHERE id=#{id}
+    </select>
+-->
+    <select id="findAll" parameterType="string" resultType="product">
         SELECT * FROM PRODUCT
+        <where>
+            <if test="value!=null and value.length>0">
+                id=#{id}
+            </if>
+        </where>
     </select>
 
     <delete id="deleteAll" parameterType="list">

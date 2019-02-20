@@ -19,6 +19,20 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="typeAliasesPackage" value="com.itheima.domain"/>
+        <!--配置pageHelper插件-->
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                       <props>
+                           <!--选择数据库方言，根据底层数据库自动选择分页语句-->
+                           <prop key="helperDialect">oracle</prop>
+                           <prop key="reasonable">true</prop>
+                       </props>
+                    </property>
+                </bean>
+            </array>
+        </property>
     </bean>
     <!--4.获取mapper代理对象-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
