@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.UserMapper">
+
+    <resultMap id="userInfoMapper" type="userInfo">
+        <id property="id" column="id"/>
+        <!--用户与角色的一对多的关系-->
+        <collection property="roles" ofType="role" column="id"
+                    select="com.itheima.mapper.RoleMapper.findRolesByUserId" fetchType="lazy"/>
+    </resultMap>
+
+    <select id="findUserByName" parameterType="string" resultMap="userInfoMapper">
+        SELECT * FROM USERS WHERE USERNAME=#{username}
+    </select>
+</mapper>

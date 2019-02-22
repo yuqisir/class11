@@ -39,5 +39,10 @@
     <orderEntry type="library" name="Maven: com.alibaba:druid:1.1.12" level="project" />
     <orderEntry type="library" name="Maven: com.github.pagehelper:pagehelper:5.1.8" level="project" />
     <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:5.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:5.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:5.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-taglibs:5.1.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-acl:5.1.1.RELEASE" level="project" />
   </component>
 </module>
