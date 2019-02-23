@@ -44,6 +44,12 @@
 						placeholder="密码"> <span
 						class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
+				<div class="form-group has-feedback">
+					<input type="text" name="imgCode" class="form-control"
+						   placeholder="验证码"> <span
+						class="glyphicon glyphicon-lock form-control-feedback"></span>
+					<img src="${pageContext.request.contextPath}/checkImg.jpg" alt=""/>
+				</div>
 				<div class="row">
 					<div class="col-xs-8">
 						<div class="checkbox icheck">

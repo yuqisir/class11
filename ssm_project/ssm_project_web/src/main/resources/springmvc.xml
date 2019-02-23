@@ -2,13 +2,16 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!--1.开启组件扫描-->
     <context:component-scan base-package="com.itheima.controller"/>
     <mvc:annotation-driven/>
@@ -17,4 +20,14 @@
         <property name="prefix" value="/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    <!--声明切面对象-->
+    <bean id="sysLogAop" class="com.itheima.aop.SysLogAop"/>
+    <!--AOP配置-->
+    <aop:config>
+        <aop:pointcut id="pid" expression="execution(* com.itheima.controller.*.*(..))"/>
+        <aop:aspect id="asp" ref="sysLogAop">
+            <aop:before method="beforeMethod" pointcut-ref="pid"/>
+            <aop:after method="afterMethod" pointcut-ref="pid"/>
+        </aop:aspect>
+    </aop:config>
 </beans>

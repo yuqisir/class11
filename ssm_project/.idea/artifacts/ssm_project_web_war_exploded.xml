@@ -43,6 +43,7 @@
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.1.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-taglibs:5.1.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:5.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: com.google.code:kaptcha:2.3.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">

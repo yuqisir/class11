@@ -18,6 +18,7 @@
     <!--1.设置不被拦截项-->
     <security:http pattern="/login.jsp" security="none"/>
     <security:http pattern="/failer.jsp" security="none"/>
+    <security:http pattern="/checkImg.jpg" security="none"/>
     <security:http pattern="/css/**" security="none"/>
     <security:http pattern="/img/**" security="none"/>
     <security:http pattern="/plugins/**" security="none"/>
@@ -69,4 +70,5 @@
         <!--第一次使用自动生成固定PERSISTENT_LOGINS表保存记录，如果已经有此表则不能再配置此项-->
         <!--<property name="createTableOnStartup" value="true"/>-->
     </bean>
+
 </beans>

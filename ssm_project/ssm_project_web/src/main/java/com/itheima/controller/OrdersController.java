@@ -21,7 +21,7 @@ public class OrdersController {
     @RequestMapping("/findAll")
     public String findAll(@RequestParam(name="pageNum",required = false,defaultValue = "1") Integer pageNum,
                           @RequestParam(name="pageSize",required = false,defaultValue = "3") Integer pageSize,
-                          String searchValue,Model model) throws Exception {
+                          @RequestParam(name="searchValue",required = false,defaultValue = "")String searchValue,Model model) throws Exception {
 
         List<Orders> list = ordersService.findAll(pageNum,pageSize,searchValue);
         PageInfo pageInfo=new PageInfo(list);

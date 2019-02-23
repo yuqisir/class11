@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.SysLogMapper">
+
+  <select id="findAll" resultType="syslog">
+      SELECT * FROM SYSLOG
+  </select>
+
+    <insert id="saveSysLog" parameterType="syslog">
+        INSERT INTO SYSLOG(VISITTIME, USERNAME, IP, URL, EXECUTIONTIME, METHOD)
+        VALUES (#{visitTime},#{username},#{ip},#{url},#{executionTime},#{method})
+    </insert>
+</mapper>

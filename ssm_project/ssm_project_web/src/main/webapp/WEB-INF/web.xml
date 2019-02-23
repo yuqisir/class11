@@ -48,4 +48,13 @@
     <filter-name>encoding</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  <!--kaptcha验证码-->
+  <servlet>
+    <servlet-name>kaptcha</servlet-name>
+    <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>kaptcha</servlet-name>
+    <url-pattern>/checkImg.jpg</url-pattern>
+  </servlet-mapping>
 </web-app>
