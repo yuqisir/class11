@@ -7,8 +7,18 @@ public class Role implements Serializable {
     private String id;
     private String roleName;
     private String roleDesc;
+    //角色和权限的关联关系
     private List<Permission> permissions;
     private List<UserInfo> users;
+    //红绿灯的标志：1代指当前用户拥有此角色，0代指当前用户未拥有此角色
+    private int flag;
+    public int getFlag() {
+        return flag;
+    }
+
+    public void setFlag(int flag) {
+        this.flag = flag;
+    }
 
     public String getId() {
         return id;

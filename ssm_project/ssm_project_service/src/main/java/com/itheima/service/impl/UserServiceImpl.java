@@ -44,4 +44,24 @@ public class UserServiceImpl implements UserService {
         System.out.println("roleList:"+roleList);
         return roleList;
     }
+    //遍历所有用户
+    public List<UserInfo> findAll() throws Exception{
+        return userMapper.findAll();
+    }
+    //根据Id查询当前用户信息
+    public UserInfo findUserById(String uid) throws Exception{
+        return userMapper.findUserById(uid);
+    }
+
+    @Override
+    public void updateUserRoles(String userId, String ids) throws Exception{
+        //先删，后保存
+        userMapper.deleteUserRoles(userId);
+        if(ids!=null&&ids.length()>0){
+            String[] roles = ids.split(",");
+            for (String roleId:roles){
+                userMapper.saveUserRoles(userId,roleId);
+            }
+        }
+    }
 }

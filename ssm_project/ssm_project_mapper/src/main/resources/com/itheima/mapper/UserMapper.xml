@@ -14,4 +14,21 @@
     <select id="findUserByName" parameterType="string" resultMap="userInfoMapper">
         SELECT * FROM USERS WHERE USERNAME=#{username}
     </select>
+    <!--遍历所有用户-->
+    <select id="findAll" resultMap="userInfoMapper">
+        SELECT * FROM USERS
+    </select>
+    <!--根据Id查询当前用户信息-->
+    <select id="findUserById" parameterType="string" resultMap="userInfoMapper">
+        SELECT * FROM USERS WHERE ID=#{uid}
+    </select>
+
+    <!--删除-->
+    <delete id="deleteUserRoles" parameterType="string">
+        DELETE FROM USERS_ROLE WHERE USERID=#{uid}
+    </delete>
+    <insert id="saveUserRoles">
+        INSERT INTO USERS_ROLE VALUES (#{userId},#{roleId})
+    </insert>
+
 </mapper>
