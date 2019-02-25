@@ -39,5 +39,8 @@
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-taglibs:5.1.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-acl:5.1.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.google.code:kaptcha:2.3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.poi:poi:3.17" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.10" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-collections4:4.1" level="project" />
   </component>
 </module>

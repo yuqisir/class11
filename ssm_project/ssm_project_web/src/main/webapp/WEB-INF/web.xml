@@ -52,6 +52,15 @@
   <servlet>
     <servlet-name>kaptcha</servlet-name>
     <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+    <init-param>
+      <param-name>kaptcha.obscurificator.impl</param-name>
+      <param-value>com.google.code.kaptcha.impl.FishEyeGimpy</param-value>
+    </init-param>
+
+    <init-param>
+      <param-name>kaptcha.textproducer.char.length</param-name>
+      <param-value>4</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>kaptcha</servlet-name>

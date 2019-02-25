@@ -114,6 +114,9 @@
 										onclick="window.location.reload();">
 										<i class="fa fa-refresh"></i> 刷新
 									</button>
+									<button type="button" class="btn btn-default" title="导出" id="excelPoi">
+										<i class="fa fa-trash-o"></i> 导出
+									</button>
 								</div>
 							</div>
 						</div>
@@ -344,6 +347,11 @@
 				}
 				$(this).data("clicks", !clicks);
 			});
+
+
+			$("#excelPoi").click(function () {
+				location.href="${pageContext.request.contextPath}/sysLog/excelPoi";
+            });
 		});
 	</script>
 </body>
